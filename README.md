@@ -74,9 +74,10 @@ Here is an example of the `.env` file:
 ```
 DATASET=webarena
 OPENAI_API_KEY=your_key
-SHOPPING="http://ec2-3-140-250-97.us-east-2.compute.amazonaws.com:7770"
-SHOPPING_ADMIN="http://ec2-3-140-250-97.us-east-2.compute.amazonaws.com:7780/admin"
-REDDIT="http://ec2-3-140-250-97.us-east-2.compute.amazonaws.com:9999"
+SHOPPING="http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770"
+
+SHOPPING_ADMIN="http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7780/admin"
+REDDIT="http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999"
 ```
 
 7. Launch the evaluation. You can run the script provided:
