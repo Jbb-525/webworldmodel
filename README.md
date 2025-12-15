@@ -87,5 +87,4 @@ Then, run:
 ```bash
 bash scripts/run_webarena.sh
 ```
-```
 
