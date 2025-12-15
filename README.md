@@ -49,14 +49,47 @@ Please change <your-server-hostname> to the real host name of your AWS machine.
 export SHOPPING="http://<your-server-hostname>:7770"
 export SHOPPING_ADMIN="http://<your-server-hostname>:7780/admin"
 export REDDIT="http://<your-server-hostname>:9999"
+export GITLAB="http://<your-server-hostname>:8023"
+export MAP="http://<your-server-hostname>:3000"
+export WIKIPEDIA="http://<your-server-hostname>:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing"
+export HOMEPAGE="http://<your-server-hostname>:4399"
 ```
+
 3. Generate config files for each test example:
 ```bash
-python webarena/scripts/generate_test_data.py
+python scripts/generate_test_data.py
 ```
-4. Launch the evaluation.
+You will see `*.json` files generated in the [config_files](./config_files) folder. Each file contains the configuration for one test example.
+
+4. Obtain and save the auto-login cookies for all websites:
+```
+bash prepare.sh
+```
+
+5. Set up API keys.
+If using OpenAI models, set a valid OpenAI API key (starting with `sk-`) as the environment variable:
+```
+export OPENAI_API_KEY=your_key
+```
+
+6. create .env files for environment variables
+Here is an example of the `.env` file:
+
+```
+DATASET=webarena
+SHOPPING="http://ec2-3-140-250-97.us-east-2.compute.amazonaws.com:7770"
+SHOPPING_ADMIN="http://ec2-3-140-250-97.us-east-2.compute.amazonaws.com:7780/admin"
+REDDIT="http://ec2-3-140-250-97.us-east-2.compute.amazonaws.com:9999"
+```
+
+7. Launch the evaluation. You can run the script provided:
+
+Check the `run_webarena.sh` script and set up environment variables and vllm as instructed.
+
+Then, run:
 
 ```bash
-bash webarena/scripts/run_webarena.sh
+bash scripts/run_webarena.sh
+```
 ```
 
