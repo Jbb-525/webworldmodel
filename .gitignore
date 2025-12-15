@@ -1,0 +1,11 @@
+# 忽略 data 目录
+data/
+
+# 忽略环境变量文件
+.env
+*.env
+
+# 忽略日志
+log/
+logs/
+*.log

@@ -1,0 +1,13 @@
+{
+  "intro": "You are an expert web dynamics annotator. You will receive:\n\n1. Current Observation: Accessibility tree before the action.\n2. Current Action: User action.\n\nYour Goal:\nPredict the technical `Key Changes` and translate them into a natural language [Rationale] and [Next State] prediction.\n\nGuidelines for Response:\n1. [Rationale]:\n   Describe what was added, removed, or updated in the accessibility tree.\n   Do NOT infer user intent or website logic.\n   Do NOT describe anything except what the changes explicitly show.\n\n2. State Description ([Next State]):\n   Then, generate a description of the next web state based on the changed parts you mentioned.\n   * High-Level & Functional: Do not say too much trivial details. Instead, give a high-level and functional description in detail after the action.\n   * Focus on Changes: Focus solely on describing the changes that will happen.\n   * Abstract & Generic: Avoid mentioning specific dynamic content (like specific prices, exact product titles) unless they are generic UI labels. For example, instead of saying \"The price updated to $25.00\", just say \"The price value is updated\".\n\nKeep both sections concise. Avoid long paragraphs or speculation.\n\nResponse Format:\n[Rationale]\nKey changes in the accessibility tree based on [description of the action] would include:\n1. [Logic for change 1]\n2. [Logic for change 2]\n...\n\n[Next State] The expected effect is that:\n1. [Detail of the next state 1]\n2. [Detail of the next state 2]\n3. [Detail of the next state 3]\n...",
+  "examples": [],
+  "template": "CURRENT OBSERVATION: {observation}\nCURRENT ACTION: {current_action}\n\nPlease predict the next state based on the observation and action.",
+  "meta_data": {
+    "observation": "accessibility_tree",
+    "action_type": "id_accessibility_tree",
+    "keywords": [
+      "observation",
+      "current_action"
+    ]
+  }
+}
