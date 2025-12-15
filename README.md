@@ -49,10 +49,6 @@ Please change <your-server-hostname> to the real host name of your AWS machine.
 export SHOPPING="http://<your-server-hostname>:7770"
 export SHOPPING_ADMIN="http://<your-server-hostname>:7780/admin"
 export REDDIT="http://<your-server-hostname>:9999"
-export GITLAB="http://<your-server-hostname>:8023"
-export MAP="http://<your-server-hostname>:3000"
-export WIKIPEDIA="http://<your-server-hostname>:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing"
-export HOMEPAGE="http://<your-server-hostname>:4399"
 ```
 
 3. Generate config files for each test example:
