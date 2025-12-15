@@ -15,9 +15,8 @@ export GITLAB="http://${HOST_NAME}:8023"
 # change <your-world_model_name> to the real world model name.
 # You can get it by running `curl http://<your-server-ip>:8000/v1/models`
 # To do this, you should start the vllm service first by running
-# python -m vllm.entrypoints.openai.api_server
-# --model <path-to-your-world-model>
-# -port 8000
+# python -m vllm.entrypoints.openai.api_server --model binnnnnid/Webworldmodel --served-model-name binnnnnid/Webworldmodel --host 0.0.0.0 --port 8000 --tensor-parallel-size 1 --gpu-memory-utilization 0.85 --trust-remote-code --dtype auto --max-model-len 8192
+
 
 world_model_name="binnnnnid/Webworldmodel"
 world_model_url="http://localhost:8000/v1"
