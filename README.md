@@ -55,7 +55,7 @@ export REDDIT="http://<your-server-hostname>:9999"
 ```bash
 python scripts/generate_test_data.py
 ```
-You will see `*.json` files generated in the [config_files](./config_files) folder. Each file contains the configuration for one test example.
+You will see `*.json` files generated in the [config_files](.webarena/config_files) folder. Each file contains the configuration for one test example.
 
 4. Obtain and save the auto-login cookies for all websites:
 ```
