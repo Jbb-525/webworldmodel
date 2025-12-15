@@ -2,7 +2,7 @@
 
 ```bash
 # Python 3.10 or 3.11 recommended
-conda create myenv python=3.10
+conda create -n myenv python=3.10
 cd verl
 pip install -e .
 ```
