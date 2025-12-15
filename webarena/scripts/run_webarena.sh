@@ -1,7 +1,7 @@
 #!/bin/bash
 export DATASET=webarena
 
-export HOST_NAME="ec2-3-17-143-106.us-east-2.compute.amazonaws.com" 
+export HOST_NAME="<your_host_name>" 
 # export OPENAI_API_KEY="<your_key>"
 export OPENAI_API_BASE="https://api.openai.com/v1"
 
