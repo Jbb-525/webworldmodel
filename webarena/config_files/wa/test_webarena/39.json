@@ -1,51 +1,33 @@
 {
   "sites": [
-    "shopping",
-    "reddit"
+    "shopping"
   ],
-  "task_id": 672,
+  "task_id": 435,
   "require_login": true,
-  "storage_state": "./.auth/reddit_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/35-ft-hdmi-cable-gearit-pro-series-hdmi-cable-35-feet-high-speed-ethernet-4k-resolution-3d-video-and-arc-audio-return-channel-hdmi-cable-white.html |AND| http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/dp-to-hdmi-cable-6ft-2-pack-fosmon-gold-plated-displayport-to-hdmi-cable-1080p-full-hd-for-pcs-to-hdtv-monitor-projector-with-hdmi-port.html",
   "geolocation": null,
-  "intent_template": "Gather the titles of {{product}} reviews with {{rating}} rating from OneStopShop, and post them in the games subreddit under the title \"real user feedback on {{product}}\"",
-  "instantiation_dict": {
-    "product": "Nintendo Switch Fortnite Wildcat Console EU",
-    "rating": "3 stars and less"
-  },
-  "intent": "Gather the titles of Nintendo Switch Fortnite Wildcat Console EU reviews with 3 stars and less rating from OneStopShop, and post them in the games subreddit under the title \"real user feedback on Nintendo Switch Fortnite Wildcat Console EU\"",
+  "intent_template": "Add the product with the lowest per unit price from my open tabs to the shopping cart",
+  "instantiation_dict": {},
+  "intent": "Add the product with the lowest per unit price from my open tabs to the shopping cart",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "url_match",
       "program_html"
     ],
     "reference_answers": null,
-    "reference_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/gaming",
+    "reference_url": "",
     "program_html": [
       {
-        "url": "func:reddit_get_post_url('__last_url__')",
-        "locator": "document.querySelector('.submission__title').outerText",
-        "required_contents": {
-          "exact_match": "real user feedback on Nintendo Switch Fortnite Wildcat Console EU"
-        }
-      },
-      {
-        "url": "func:reddit_get_post_url('__last_url__')",
-        "locator": "document.querySelector('.submission__body').outerText",
+        "url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/checkout/cart",
+        "locator": "",
         "required_contents": {
           "must_include": [
-            "EU charger and wild cat card doesn\u2019t even work!",
-            "REFUND REJECTED",
-            "Charging port not compatible",
-            "not compatible in the US",
-            "Wildcard Bonus Credits Not Redeemable!",
-            "Code not available!!"
+            "DP to HDMI Cable 6FT (2 Pack), Fosmon Gold Plated Displayport to HDMI Cable 1080p Full HD for PCs to HDTV, Monitor, Projector with HDMI Port"
           ]
         }
       }
-    ],
-    "url_note": "GOLD in PRED"
+    ]
   },
-  "intent_template_id": 101
+  "intent_template_id": 145
 }

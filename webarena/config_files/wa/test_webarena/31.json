@@ -2,35 +2,32 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 438,
+  "task_id": 360,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "I previously ordered some {{product}} {{time}} and later cancelled. Can you reorder it for me?",
+  "intent_template": "Show me the {{info}} for order number {{order_number}}.",
   "instantiation_dict": {
-    "product": "a TV stand",
-    "time": "sometime around sep 2022"
+    "info": "product names",
+    "order_number": "148"
   },
-  "intent": "I previously ordered some a TV stand sometime around sep 2022 and later cancelled. Can you reorder it for me?",
+  "intent": "Show me the product names for order number 148.",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "program_html"
+      "string_match"
     ],
-    "reference_answers": null,
+    "reference_answers": {
+      "must_include": [
+        "Bornbridge Artificial Spiral Topiary Tree - Indoor / Outdoor Topiary Trees - Artificial Outdoor Plants (2 Pack, 4' Cypress)",
+        "Russound 5B45W 4\" Indoor Outdoor Speakers White"
+      ]
+    },
     "reference_url": "",
-    "program_html": [
-      {
-        "url": "func:shopping_get_latest_order_url()",
-        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
-        "required_contents": {
-          "must_include": [
-            "B08PVHRRB7"
-          ]
-        }
-      }
-    ]
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "Bornbridge Artificial Spiral Topiary Tree - Indoor / Outdoor Topiary Trees - Artificial Outdoor Plants (2 Pack, 4' Cypress), Russound 5B45W 4\" Indoor Outdoor Speakers White"
   },
-  "intent_template_id": 156
+  "intent_template_id": 206
 }

@@ -2,38 +2,28 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 530,
+  "task_id": 22,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/fujifilm-finepix-z200fd-10mp-digital-camera-with-5x-optical-dual-image-stabilized-zoom-black.html",
   "geolocation": null,
-  "intent_template": "Draft a refund message via their \"contact us\" form for the {{product}} I bought {{time}}. It broke after three days of use. The shop requires the order id, the reason and the amount to refund in the message. Don't submit yet",
+  "intent_template": "List out reviewers, if exist, who mention about {{description}}",
   "instantiation_dict": {
-    "product": "kitchen organizer",
-    "time": "around Feb 2023"
+    "description": "under water photo"
   },
-  "intent": "Draft a refund message via their \"contact us\" form for the kitchen organizer I bought around Feb 2023. It broke after three days of use. The shop requires the order id, the reason and the amount to refund in the message. Don't submit yet",
+  "intent": "List out reviewers, if exist, who mention about under water photo",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "program_html"
+      "string_match"
     ],
-    "reference_answers": null,
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
     "reference_url": "",
-    "program_html": [
-      {
-        "url": "last",
-        "locator": "document.querySelector('[title=\"What\u2019s on your mind?\"').value",
-        "required_contents": {
-          "must_include": [
-            "refund",
-            "it broke after three days of use",
-            "000000161",
-            "68.88"
-          ]
-        }
-      }
-    ]
+    "program_html": [],
+    "string_note": "There is no review about under water photo",
+    "reference_answer_raw_annotation": "N/A"
   },
-  "intent_template_id": 154
+  "intent_template_id": 222
 }

@@ -1,44 +1,48 @@
 {
   "sites": [
-    "gitlab",
+    "shopping",
     "reddit"
   ],
-  "task_id": 566,
+  "task_id": 674,
   "require_login": true,
-  "storage_state": "./.auth/gitlab.reddit_state.json",
-  "start_url": "__GITLAB__",
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "create a repository named {{name}} that includes a README file with the links to the most active {{num}} DIY ideas on DIY subreddit?",
+  "intent_template": "Gather the titles of {{product}} reviews with {{rating}} rating from OneStopShop, and post them in the games subreddit under the title \"real user feedback on {{product}}\"",
   "instantiation_dict": {
-    "name": "Do it myself",
-    "num": 8
+    "product": "Doc and Pies Arcade Factory Cocktail Arcade Machine",
+    "rating": "3 stars and less"
   },
-  "intent": "create a repository named Do it myself that includes a README file with the links to the most active 8 DIY ideas on DIY subreddit?",
+  "intent": "Gather the titles of Doc and Pies Arcade Factory Cocktail Arcade Machine reviews with 3 stars and less rating from OneStopShop, and post them in the games subreddit under the title \"real user feedback on Doc and Pies Arcade Factory Cocktail Arcade Machine\"",
   "require_reset": false,
   "eval": {
     "eval_types": [
+      "url_match",
       "program_html"
     ],
     "reference_answers": null,
-    "reference_url": "",
+    "reference_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/f/gaming",
     "program_html": [
       {
-        "url": "__GITLAB__/byteblaze/Do-it-myself/-/raw/main/README.md",
-        "locator": "",
+        "url": "func:reddit_get_post_url('__last_url__')",
+        "locator": "document.querySelector('.submission__title').outerText",
+        "required_contents": {
+          "exact_match": "real user feedback on Doc and Pies Arcade Factory Cocktail Arcade Machine"
+        }
+      },
+      {
+        "url": "func:reddit_get_post_url('__last_url__')",
+        "locator": "document.querySelector('.submission__body').outerText",
         "required_contents": {
           "must_include": [
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/DIY/118903/separate-glued-plastic-parts",
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/DIY/118923/how-would-you-fix-this-dryer-vent-mess",
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/DIY/118935/basement-bulkhead-soffit-wall-framing",
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/DIY/118904/ge-water-heater-pilot-light-won-t-stay-lit",
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/DIY/118960/attempting-to-move-a-wall-outlet-in-my-basement-a-few-inches",
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/DIY/118931/afci-outlet-question",
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/DIY/118824/teflon-tape-to-attach-washing-machine-drain-hose-to-pipe",
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/DIY/118866/paver-base-for-shed"
+            "Poorly Made Exterior. Consider a different Company.",
+            "piece of junk ,..can't believe I spent money on this !!!!",
+            "Based arrived broken but game itself works"
           ]
         }
       }
-    ]
+    ],
+    "url_note": "GOLD in PRED"
   },
-  "intent_template_id": 88
+  "intent_template_id": 101
 }

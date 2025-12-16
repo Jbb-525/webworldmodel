@@ -2,34 +2,31 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 513,
+  "task_id": 143,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "Add a {{product}} to my wish list.",
+  "intent_template": "How much I spent on {{category}} shopping during {{time}}",
   "instantiation_dict": {
-    "product": "chair"
+    "category": "home decoration",
+    "time": "1/29/2023"
   },
-  "intent": "Add a chair to my wish list.",
+  "intent": "How much I spent on home decoration shopping during 1/29/2023",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "program_html"
+      "string_match"
     ],
-    "reference_answers": null,
+    "reference_answers": {
+      "must_include": [
+        "265.69"
+      ]
+    },
     "reference_url": "",
-    "program_html": [
-      {
-        "url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770/wishlist/",
-        "locator": "document.querySelector('.products-grid.wishlist').outerText",
-        "required_contents": {
-          "must_include": [
-            "chair"
-          ]
-        }
-      }
-    ]
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "$265.69"
   },
-  "intent_template_id": 189
+  "intent_template_id": 162
 }

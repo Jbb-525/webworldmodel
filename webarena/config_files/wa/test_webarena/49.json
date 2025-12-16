@@ -2,30 +2,26 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 338,
+  "task_id": 270,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "Tell me when I last ordered my {{description}}?",
+  "intent_template": "Show me products under ${{price}} in \"{{product_category}}\" category",
   "instantiation_dict": {
-    "description": "toothpaste"
+    "price": "30",
+    "product_category": "men shoes"
   },
-  "intent": "Tell me when I last ordered my toothpaste?",
+  "intent": "Show me products under $30 in \"men shoes\" category",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "string_match"
+      "url_match"
     ],
-    "reference_answers": {
-      "fuzzy_match": [
-        "December 4th 2022"
-      ]
-    },
-    "reference_url": "",
+    "reference_answers": null,
+    "reference_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/clothing-shoes-jewelry/men/shoes.html?price=0-30",
     "program_html": [],
-    "string_note": "",
-    "reference_answer_raw_annotation": "December 4th 2022"
+    "url_note": "GOLD in PRED"
   },
-  "intent_template_id": 169
+  "intent_template_id": 139
 }

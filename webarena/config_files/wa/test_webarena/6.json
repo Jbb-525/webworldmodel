@@ -2,35 +2,31 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 440,
+  "task_id": 49,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "I previously ordered some {{product}} {{time}} and later cancelled. Can you reorder it for me?",
+  "intent_template": "Today is 6/12/2023. Tell me how many fulfilled orders I have {{period}}, and the total amount of money I spent.",
   "instantiation_dict": {
-    "product": "a make up removal kit",
-    "time": "during summer 2022"
+    "period": "over the past four month"
   },
-  "intent": "I previously ordered some a make up removal kit during summer 2022 and later cancelled. Can you reorder it for me?",
+  "intent": "Today is 6/12/2023. Tell me how many fulfilled orders I have over the past four month, and the total amount of money I spent.",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "program_html"
+      "string_match"
     ],
-    "reference_answers": null,
+    "reference_answers": {
+      "fuzzy_match": [
+        "3 orders",
+        "$845.49 total spend"
+      ]
+    },
     "reference_url": "",
-    "program_html": [
-      {
-        "url": "func:shopping_get_latest_order_url()",
-        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
-        "required_contents": {
-          "must_include": [
-            "B0738JQG6Q"
-          ]
-        }
-      }
-    ]
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "3 orders, $845.49 total spend"
   },
-  "intent_template_id": 156
+  "intent_template_id": 197
 }

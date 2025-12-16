@@ -2,30 +2,26 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 192,
+  "task_id": 325,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "Tell me the total cost of my latest {{status}} order?",
+  "intent_template": "Show me the \"{{product}}\" listings by {{sorting_order}}.",
   "instantiation_dict": {
-    "status": "non-cancelled"
+    "product": "mouth night guard",
+    "sorting_order": "descending price"
   },
-  "intent": "Tell me the total cost of my latest non-cancelled order?",
+  "intent": "Show me the \"mouth night guard\" listings by descending price.",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "string_match"
+      "url_match"
     ],
-    "reference_answers": {
-      "must_include": [
-        "754.99"
-      ]
-    },
-    "reference_url": "",
+    "reference_answers": null,
+    "reference_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/catalogsearch/result/index/?q=mouth%20night%20guard%20&product_list_order=price",
     "program_html": [],
-    "string_note": "",
-    "reference_answer_raw_annotation": "754.99"
+    "url_note": "GOLD in PRED"
   },
-  "intent_template_id": 214
+  "intent_template_id": 208
 }

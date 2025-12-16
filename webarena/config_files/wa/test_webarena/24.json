@@ -2,35 +2,31 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 436,
+  "task_id": 144,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "I previously ordered some {{product}} {{time}} and later cancelled. Can you reorder it for me?",
+  "intent_template": "How much I spent on {{category}} shopping during {{time}}",
   "instantiation_dict": {
-    "product": "a mattress foundation",
-    "time": "around Feb or March 2023"
+    "category": "food",
+    "time": "from mid Jan to the end Jan 2023"
   },
-  "intent": "I previously ordered some a mattress foundation around Feb or March 2023 and later cancelled. Can you reorder it for me?",
+  "intent": "How much I spent on food shopping during from mid Jan to the end Jan 2023",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "program_html"
+      "string_match"
     ],
-    "reference_answers": null,
+    "reference_answers": {
+      "must_include": [
+        "0"
+      ]
+    },
     "reference_url": "",
-    "program_html": [
-      {
-        "url": "func:shopping_get_latest_order_url()",
-        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
-        "required_contents": {
-          "must_include": [
-            "B07DFJ5XKH"
-          ]
-        }
-      }
-    ]
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "0"
   },
-  "intent_template_id": 156
+  "intent_template_id": 162
 }

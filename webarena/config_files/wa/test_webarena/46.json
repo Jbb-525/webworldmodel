@@ -2,38 +2,25 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 531,
+  "task_id": 275,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "Draft a refund message via their \"contact us\" form for the {{product}} I bought {{time}}. It broke after three days of use. The shop requires the order id, the reason and the amount to refund in the message. Don't submit yet",
+  "intent_template": "Search for \"{{keyword}}\"",
   "instantiation_dict": {
-    "product": "phone case",
-    "time": "March 2023"
+    "keyword": "xbox"
   },
-  "intent": "Draft a refund message via their \"contact us\" form for the phone case I bought March 2023. It broke after three days of use. The shop requires the order id, the reason and the amount to refund in the message. Don't submit yet",
+  "intent": "Search for \"xbox\"",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "program_html"
+      "url_match"
     ],
     "reference_answers": null,
-    "reference_url": "",
-    "program_html": [
-      {
-        "url": "last",
-        "locator": "document.querySelector('[title=\"What\u2019s on your mind?\"').value",
-        "required_contents": {
-          "must_include": [
-            "refund",
-            "it broke after three days of use",
-            "000000180",
-            "$12.99"
-          ]
-        }
-      }
-    ]
+    "reference_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/catalogsearch/result/?q=xbox",
+    "program_html": [],
+    "url_note": "GOLD in PRED"
   },
-  "intent_template_id": 154
+  "intent_template_id": 212
 }

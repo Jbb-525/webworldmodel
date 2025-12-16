@@ -2,45 +2,40 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 585,
+  "task_id": 655,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "Rate my recent purchase of {{product}} with {{num_star}} stars, using my nickname {{nickname}}?",
+  "intent_template": "Fill the \"contact us\" form in the site for a refund on the {{product}} I bought, stating that it broke after just three days of use. Also, ensure to include the order number #{{order_id}} and the product SKU. Don't submit yet, I will check.",
   "instantiation_dict": {
-    "product": "floor lamp",
-    "num_star": 5,
-    "nickname": "Emma Lopez"
+    "product": "iphone case",
+    "order_id": "180"
   },
-  "intent": "Rate my recent purchase of floor lamp with 5 stars, using my nickname Emma Lopez?",
+  "intent": "Fill the \"contact us\" form in the site for a refund on the iphone case I bought, stating that it broke after just three days of use. Also, ensure to include the order number #180 and the product SKU. Don't submit yet, I will check.",
   "require_reset": false,
   "eval": {
     "eval_types": [
+      "url_match",
       "program_html"
     ],
     "reference_answers": null,
-    "reference_url": "",
+    "reference_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/contact",
     "program_html": [
       {
         "url": "last",
-        "locator": "func:shopping_get_sku_latest_review_rating('B00J8RZL7I')",
+        "locator": "document.querySelector('[title=\"What\u2019s on your mind?\"').value",
         "required_contents": {
           "must_include": [
-            "100"
-          ]
-        }
-      },
-      {
-        "url": "last",
-        "locator": "func:shopping_get_sku_latest_review_author('B00J8RZL7I')",
-        "required_contents": {
-          "must_include": [
-            "Emma Lopez"
+            "refund",
+            "it broke after three days of use",
+            "180",
+            "B087QJN9W1"
           ]
         }
       }
-    ]
+    ],
+    "url_note": "GOLD in PRED"
   },
-  "intent_template_id": 194
+  "intent_template_id": 153
 }

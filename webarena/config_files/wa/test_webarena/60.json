@@ -1,42 +1,38 @@
 {
   "sites": [
-    "gitlab",
     "reddit"
   ],
-  "task_id": 552,
+  "task_id": 646,
   "require_login": true,
-  "storage_state": "./.auth/gitlab.reddit_state.json",
-  "start_url": "__GITLAB__",
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999",
   "geolocation": null,
-  "intent_template": "Create a folder named {{directory}} in {{gitlab_repo}} repo. Within it, create a file named urls.txt that contains the URLs of the 5 most recent posts from the {{subreddit}}?",
+  "intent_template": "Post in {{subreddit}} subreddit about what could midjourney help the correpong field.",
   "instantiation_dict": {
-    "directory": "real_space",
-    "subreddit": "space",
-    "gitlab_repo": "gimmiethat.space"
+    "subreddit": "DIY"
   },
-  "intent": "Create a folder named real_space in gimmiethat.space repo. Within it, create a file named urls.txt that contains the URLs of the 5 most recent posts from the space?",
+  "intent": "Post in DIY subreddit about what could midjourney help the correpong field.",
   "require_reset": false,
   "eval": {
     "eval_types": [
+      "url_match",
       "program_html"
     ],
     "reference_answers": null,
-    "reference_url": "",
+    "reference_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/f/diy",
     "program_html": [
       {
-        "url": "__GITLAB__/byteblaze/gimmiethat.space/-/raw/main/real_space/urls.txt",
-        "locator": "",
+        "url": "func:reddit_get_post_url('__last_url__')",
+        "locator": "document.querySelector('.submission__inner').outerText",
         "required_contents": {
           "must_include": [
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/space/134164/scientists-erupt-at-nasa-gutting-funding-for-crucial-venus",
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/space/134163/virgin-orbit-fails-to-secure-funding-will-cease-operations",
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/space/134162/nasa-to-name-artemis-2-crew-next-week-the-first-moon",
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/space/134161/bent-light-in-deep-space-reveals-one-of-the-biggest-black",
-            "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/space/134160/seti-s-new-machine-learning-algorithm-works-like-google-s"
+            "midjourney",
+            "help"
           ]
         }
       }
-    ]
+    ],
+    "url_note": "GOLD in PRED"
   },
-  "intent_template_id": 84
+  "intent_template_id": 19
 }

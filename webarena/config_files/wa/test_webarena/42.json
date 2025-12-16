@@ -2,25 +2,45 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 239,
+  "task_id": 587,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "I am doing a market survey for one stop market, show me the most expensive product from {{product_category}} category",
+  "intent_template": "Rate my recent purchase of {{product}} with {{num_star}} stars, using my nickname {{nickname}}?",
   "instantiation_dict": {
-    "product_category": "nutrition bars and drinks"
+    "product": "PS3 Remote Controllers",
+    "num_star": 3,
+    "nickname": "GamingEmma"
   },
-  "intent": "I am doing a market survey for one stop market, show me the most expensive product from nutrition bars and drinks category",
+  "intent": "Rate my recent purchase of PS3 Remote Controllers with 3 stars, using my nickname GamingEmma?",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "url_match"
+      "program_html"
     ],
     "reference_answers": null,
-    "reference_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770/kellogg-s-special-k-protein-meal-bars-chocolate-caramel-12-7oz-6-count.html",
-    "program_html": [],
-    "url_note": "GOLD in PRED"
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "func:shopping_get_sku_latest_review_rating('B0041MSF2S')",
+        "required_contents": {
+          "must_include": [
+            "60"
+          ]
+        }
+      },
+      {
+        "url": "last",
+        "locator": "func:shopping_get_sku_latest_review_author('B0041MSF2S')",
+        "required_contents": {
+          "must_include": [
+            "GamingEmma"
+          ]
+        }
+      }
+    ]
   },
-  "intent_template_id": 138
+  "intent_template_id": 194
 }

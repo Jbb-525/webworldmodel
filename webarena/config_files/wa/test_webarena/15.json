@@ -1,48 +1,36 @@
 {
   "sites": [
-    "shopping",
-    "reddit"
+    "shopping"
   ],
-  "task_id": 675,
+  "task_id": 514,
   "require_login": true,
-  "storage_state": "./.auth/reddit_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "Gather the titles of {{product}} reviews with {{rating}} rating from OneStopShop, and post them in the games subreddit under the title \"real user feedback on {{product}}\"",
+  "intent_template": "Add a {{product}} to my wish list.",
   "instantiation_dict": {
-    "product": "HORI 3D Surround Gaming Neckset",
-    "rating": "2 stars and less"
+    "product": "white desk"
   },
-  "intent": "Gather the titles of HORI 3D Surround Gaming Neckset reviews with 2 stars and less rating from OneStopShop, and post them in the games subreddit under the title \"real user feedback on HORI 3D Surround Gaming Neckset\"",
+  "intent": "Add a white desk to my wish list.",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "url_match",
       "program_html"
     ],
     "reference_answers": null,
-    "reference_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/gaming",
+    "reference_url": "",
     "program_html": [
       {
-        "url": "func:reddit_get_post_url('__last_url__')",
-        "locator": "document.querySelector('.submission__title').outerText",
-        "required_contents": {
-          "exact_match": "real user feedback on HORI 3D Surround Gaming Neckset"
-        }
-      },
-      {
-        "url": "func:reddit_get_post_url('__last_url__')",
-        "locator": "document.querySelector('.submission__body').outerText",
+        "url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/wishlist/",
+        "locator": "document.querySelector('.products-grid.wishlist').outerText",
         "required_contents": {
           "must_include": [
-            "Not worth it for PC users",
-            "I really wanted to like this.",
-            "I wish this was better..."
+            "white",
+            "desk"
           ]
         }
       }
-    ],
-    "url_note": "GOLD in PRED"
+    ]
   },
-  "intent_template_id": 101
+  "intent_template_id": 189
 }

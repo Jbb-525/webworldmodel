@@ -2,30 +2,25 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 329,
+  "task_id": 161,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "How much I spend {{time}} on shopping at One Stop Market?",
+  "intent_template": "I have a lot of Nintendo Switch game cards now, help me find the best storage option to fit all {{num}} cards",
   "instantiation_dict": {
-    "time": "on 4/19/2023"
+    "num": 23
   },
-  "intent": "How much I spend on 4/19/2023 on shopping at One Stop Market?",
+  "intent": "I have a lot of Nintendo Switch game cards now, help me find the best storage option to fit all 23 cards",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "string_match"
+      "url_match"
     ],
-    "reference_answers": {
-      "must_include": [
-        "0"
-      ]
-    },
-    "reference_url": "",
+    "reference_answers": null,
+    "reference_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/heiying-game-card-case-for-nintendo-switch-switch-oled-game-card-or-micro-sd-memory-cards-portable-switch-game-memory-card-storage-with-24-game-card-slots-and-24-micro-sd-card-slots-black.html",
     "program_html": [],
-    "string_note": "",
-    "reference_answer_raw_annotation": "0"
+    "url_note": "GOLD in PRED"
   },
-  "intent_template_id": 147
+  "intent_template_id": 171
 }

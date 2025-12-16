@@ -2,27 +2,47 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 301,
+  "task_id": 571,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "Show the most recent {{status}} order",
+  "intent_template": "I recently moved, my address is {{address}}, update my information on OneStopShopping accordingly",
   "instantiation_dict": {
-    "status": "processing"
+    "address": "231 Willow Way, Suite 100, Chicago, IL, 60601"
   },
-  "intent": "Show the most recent processing order",
+  "intent": "I recently moved, my address is 231 Willow Way, Suite 100, Chicago, IL, 60601, update my information on OneStopShopping accordingly",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "string_match"
+      "program_html"
     ],
-    "reference_answers": {
-      "fuzzy_match": "N/A"
-    },
+    "reference_answers": null,
     "reference_url": "",
-    "program_html": [],
-    "string_note": "there is no order in processing"
+    "program_html": [
+      {
+        "url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/customer/address",
+        "locator": "document.querySelector(\".box.box-address-billing > .box-content\").outerText",
+        "required_contents": {
+          "must_include": [
+            "231 Willow Way",
+            "Suite 100",
+            "Chicago, Illinois, 60601"
+          ]
+        }
+      },
+      {
+        "url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/customer/address",
+        "locator": "document.querySelector(\".box.box-address-shipping > .box-content\").outerText",
+        "required_contents": {
+          "must_include": [
+            "231 Willow Way",
+            "Suite 100",
+            "Chicago, Illinois, 60601"
+          ]
+        }
+      }
+    ]
   },
-  "intent_template_id": 180
+  "intent_template_id": 165
 }

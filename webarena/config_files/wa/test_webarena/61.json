@@ -2,34 +2,38 @@
   "sites": [
     "reddit"
   ],
-  "task_id": 406,
+  "task_id": 620,
   "require_login": true,
   "storage_state": "./.auth/reddit_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999",
   "geolocation": null,
-  "intent_template": "Upvote the newest post in {{subreddit}} subreddit",
+  "intent_template": "Ask for advice about {{issue}} in a subreddit for relations",
   "instantiation_dict": {
-    "subreddit": "future technology"
+    "issue": "deal with long-distance relationships"
   },
-  "intent": "Upvote the newest post in future technology subreddit",
+  "intent": "Ask for advice about deal with long-distance relationships in a subreddit for relations",
   "require_reset": false,
   "eval": {
     "eval_types": [
+      "url_match",
       "program_html"
     ],
     "reference_answers": null,
-    "reference_url": "",
+    "reference_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/f/relationship_advice",
     "program_html": [
       {
-        "url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/Futurology/119517/openai-ceo-it-s-not-funny-that-i-m-afraid-of-the-ai-we-re",
-        "locator": "document.querySelector('div.submission__vote').querySelector('form').getAttribute('class')",
+        "url": "func:reddit_get_post_url('__last_url__')",
+        "locator": "document.querySelector('.submission__inner').outerText",
         "required_contents": {
           "must_include": [
-            "vote vote--user-upvoted"
+            "long",
+            "distance",
+            "relation"
           ]
         }
       }
-    ]
+    ],
+    "url_note": "GOLD in PRED"
   },
-  "intent_template_id": 22
+  "intent_template_id": 12
 }

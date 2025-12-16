@@ -230,6 +230,8 @@ def config() -> argparse.Namespace:
 
     # logging related
     parser.add_argument("--result_dir", type=str, default="")
+    parser.add_argument('--mode', type=str, default='chat', help='LLM usage mode: chat or completion')
+    # parser.add_argument('--provider', type=str, default='openai', help='Model provider: openai, vllm, etc.')
     args = parser.parse_args()
 
     # check the whether the action space is compatible with the observation space

@@ -2,33 +2,26 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 118,
+  "task_id": 368,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "I have jaw bruxism problem, show me something that could alleviate the problem.",
+  "intent_template": "find discounted items.",
   "instantiation_dict": {},
-  "intent": "I have jaw bruxism problem, show me something that could alleviate the problem.",
+  "intent": "find discounted items.",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "program_html"
+      "string_match"
     ],
-    "reference_answers": null,
-    "reference_url": null,
-    "program_html": [
-      {
-        "url": "last",
-        "locator": "",
-        "required_contents": {
-          "must_include": [
-            "jaw bruxism",
-            "mouth guard"
-          ]
-        }
-      }
-    ]
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "There is no function to show only discount items",
+    "reference_answer_raw_annotation": "There is no function to show only discount items."
   },
-  "intent_template_id": 151
+  "intent_template_id": 188
 }

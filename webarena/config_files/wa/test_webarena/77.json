@@ -2,46 +2,29 @@
   "sites": [
     "reddit"
   ],
-  "task_id": 619,
+  "task_id": 726,
   "require_login": true,
   "storage_state": "./.auth/reddit_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/pics",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999",
   "geolocation": null,
-  "intent_template": "Re-post the image of {{content}} in this page to {{subreddit}} subreddit and note \"from /f/pics\"",
+  "intent_template": "DisLike all submissions created by {{user}} in subreddit {{subreddit}}",
   "instantiation_dict": {
-    "content": "costume contest",
-    "subreddit": "funny"
+    "subreddit": "earthporn",
+    "user": "jacyanthis"
   },
-  "intent": "Re-post the image of costume contest in this page to funny subreddit and note \"from /f/pics\"",
+  "intent": "DisLike all submissions created by jacyanthis in subreddit earthporn",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "url_match",
-      "program_html"
+      "string_match"
     ],
-    "reference_answers": null,
-    "reference_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/funny",
-    "program_html": [
-      {
-        "url": "func:reddit_get_post_url('__last_url__')",
-        "locator": "document.querySelector('.submission__inner').outerText",
-        "required_contents": {
-          "must_include": [
-            "from /f/pics"
-          ]
-        }
-      },
-      {
-        "url": "func:reddit_get_post_url('__last_url__')",
-        "locator": "[...document.querySelector('.submission__inner').querySelectorAll('[href],[src]')].map(elem => elem.getAttribute('href') || elem.getAttribute('src')).join(' ')",
-        "required_contents": {
-          "must_include": [
-            "bd8bc5f4c846aac4df08626faa3a34a7d47c8f3bdd92bf615a54afd939f063a7.jpg"
-          ]
-        }
-      }
-    ],
-    "url_note": "GOLD in PRED"
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "jacyanthis does not have any submissions in earthporn",
+    "reference_answer_raw_annotation": "N/A"
   },
-  "intent_template_id": 11
+  "intent_template_id": 1510
 }

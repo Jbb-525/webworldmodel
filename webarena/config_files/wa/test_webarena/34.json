@@ -2,25 +2,25 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 162,
+  "task_id": 238,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "I have a lot of Nintendo Switch game cards now, help me find the best storage option to fit all {{num}} cards",
+  "intent_template": "I am doing a market survey for one stop market, show me the most expensive product from {{product_category}} category",
   "instantiation_dict": {
-    "num": 40
+    "product_category": "PS4 accessories"
   },
-  "intent": "I have a lot of Nintendo Switch game cards now, help me find the best storage option to fit all 40 cards",
+  "intent": "I am doing a market survey for one stop market, show me the most expensive product from PS4 accessories category",
   "require_reset": false,
   "eval": {
     "eval_types": [
       "url_match"
     ],
     "reference_answers": null,
-    "reference_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770/game-card-holder-storage-case-for-nintendo-switch-games-or-ps-vita-game-case-or-sd-memory-cards-black.html",
+    "reference_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/astro-gaming-a50-wireless-headset-base-station-gen-4-compatible-with-ps5-ps4-pc-mac-black-silver.html",
     "program_html": [],
     "url_note": "GOLD in PRED"
   },
-  "intent_template_id": 171
+  "intent_template_id": 138
 }

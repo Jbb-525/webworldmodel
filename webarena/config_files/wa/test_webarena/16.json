@@ -2,28 +2,25 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 24,
+  "task_id": 158,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770/haflinger-men-s-wool-felt-open-back-slippers-beige-550-peat-us-7.html",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "List out reviewers, if exist, who mention about {{description}}",
+  "intent_template": "I have a lot of Nintendo Switch game cards now, help me find the best storage option to fit all {{num}} cards",
   "instantiation_dict": {
-    "description": "price being unfair"
+    "num": 11
   },
-  "intent": "List out reviewers, if exist, who mention about price being unfair",
+  "intent": "I have a lot of Nintendo Switch game cards now, help me find the best storage option to fit all 11 cards",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "string_match"
+      "url_match"
     ],
-    "reference_answers": {
-      "fuzzy_match": "N/A"
-    },
-    "reference_url": "",
+    "reference_answers": null,
+    "reference_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770/heiying-game-card-case-for-nintendo-switch-switch-oled-game-card-or-micro-sd-memory-cards-portable-switch-game-memory-card-storage-with-24-game-card-slots-and-24-micro-sd-card-slots-black.html",
     "program_html": [],
-    "string_note": "There is no reivew about price being unfair",
-    "reference_answer_raw_annotation": "N/A"
+    "url_note": "GOLD in PRED"
   },
-  "intent_template_id": 222
+  "intent_template_id": 171
 }

@@ -2,29 +2,30 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 225,
+  "task_id": 320,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "What do customers say about {{product_type}} from {{manufature}}",
+  "intent_template": "How much refund I should expect from my order canlled in {{time}}, including shipping fee",
   "instantiation_dict": {
-    "product_type": "brush",
-    "manufature": "sephora"
+    "time": "Feb 2023"
   },
-  "intent": "What do customers say about brush from sephora",
+  "intent": "How much refund I should expect from my order canlled in Feb 2023, including shipping fee",
   "require_reset": false,
   "eval": {
     "eval_types": [
       "string_match"
     ],
     "reference_answers": {
-      "fuzzy_match": "N/A"
+      "must_include": [
+        "406.53"
+      ]
     },
     "reference_url": "",
     "program_html": [],
-    "string_note": "The sephora brushes don't have reviews",
-    "reference_answer_raw_annotation": "N/A"
+    "string_note": "",
+    "reference_answer_raw_annotation": "406.53"
   },
-  "intent_template_id": 135
+  "intent_template_id": 160
 }

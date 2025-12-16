@@ -2,16 +2,16 @@
   "sites": [
     "reddit"
   ],
-  "task_id": 405,
+  "task_id": 400,
   "require_login": true,
   "storage_state": "./.auth/reddit_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999",
   "geolocation": null,
-  "intent_template": "Upvote the newest post in {{subreddit}} subreddit",
+  "intent_template": "Change my reddit bio to \"{{content}}\"",
   "instantiation_dict": {
-    "subreddit": "DIY"
+    "content": "Pro Python Developer with 20 years of Experience"
   },
-  "intent": "Upvote the newest post in DIY subreddit",
+  "intent": "Change my reddit bio to \"Pro Python Developer with 20 years of Experience\"",
   "require_reset": false,
   "eval": {
     "eval_types": [
@@ -21,15 +21,13 @@
     "reference_url": "",
     "program_html": [
       {
-        "url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/DIY/119019/how-can-i-bring-an-hdmi-cable-from-my-pc-downstairs-to-my-tv",
-        "locator": "document.querySelector('div.submission__vote').querySelector('form').getAttribute('class')",
+        "url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/user/MarvelsGrantMan136",
+        "locator": "document.querySelector(\".user-bio__biography\").outerText",
         "required_contents": {
-          "must_include": [
-            "vote vote--user-upvoted"
-          ]
+          "exact_match": "Pro Python Developer with 20 years of Experience"
         }
       }
     ]
   },
-  "intent_template_id": 22
+  "intent_template_id": 6
 }

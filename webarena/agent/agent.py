@@ -452,7 +452,7 @@ def construct_agent(
             value_model_url = args.value_model_url,
             top_p=args.top_p,
             temperature=args.temperature,
-            my_world_model=args.my_world_model,
+            # my_world_model=args.my_world_model,
         )
         print("===================== World model is initialized")
 

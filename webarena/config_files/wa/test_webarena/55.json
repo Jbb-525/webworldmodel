@@ -1,38 +1,42 @@
 {
   "sites": [
+    "gitlab",
     "reddit"
   ],
-  "task_id": 609,
+  "task_id": 553,
   "require_login": true,
-  "storage_state": "./.auth/reddit_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999",
+  "storage_state": "./.auth/gitlab.reddit_state.json",
+  "start_url": "__GITLAB__",
   "geolocation": null,
-  "intent_template": "Find a subreddit focused on topics related to {{topic}}, and post my question, \"{{question}}\" there",
+  "intent_template": "Create a folder named {{directory}} in {{gitlab_repo}} repo. Within it, create a file named urls.txt that contains the URLs of the 5 most recent posts from the {{subreddit}}?",
   "instantiation_dict": {
-    "topic": "ML, DL, NLP",
-    "question": "what is the SOTA web navigation agent repo"
+    "directory": "news",
+    "gitlab_repo": "gimmiethat.space",
+    "subreddit": "news related subreddits"
   },
-  "intent": "Find a subreddit focused on topics related to ML, DL, NLP, and post my question, \"what is the SOTA web navigation agent repo\" there",
+  "intent": "Create a folder named news in gimmiethat.space repo. Within it, create a file named urls.txt that contains the URLs of the 5 most recent posts from the news related subreddits?",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "url_match",
       "program_html"
     ],
     "reference_answers": null,
-    "reference_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/deeplearning |OR| http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/MachineLearning |OR| http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/singularity",
+    "reference_url": "",
     "program_html": [
       {
-        "url": "func:reddit_get_post_url('__last_url__')",
-        "locator": "document.querySelector('.submission__inner').outerText",
+        "url": "__GITLAB__/byteblaze/gimmiethat.space/-/raw/main/news/urls.txt",
+        "locator": "",
         "required_contents": {
           "must_include": [
-            "what is the SOTA web navigation agent repo"
+            "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/f/news/129905/ohio-man-charged-for-using-molotov-cocktails-to-attack",
+            "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/f/news/129904/in-a-loss-for-fox-news-judge-allows-dominion-s-defamation",
+            "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/f/news/129903/theater-group-sues-to-block-tennessee-s-new-anti-drag-law",
+            "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/f/news/129902/andrew-tate-released-from-jail-in-romania-and-placed-under",
+            "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/f/news/129901/rare-high-risk-storm-alert-issued-for-parts-of-midwest-and"
           ]
         }
       }
-    ],
-    "url_note": "GOLD in PRED"
+    ]
   },
-  "intent_template_id": 5
+  "intent_template_id": 84
 }

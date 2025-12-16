@@ -2,25 +2,31 @@
   "sites": [
     "shopping"
   ],
-  "task_id": 264,
+  "task_id": 145,
   "require_login": true,
   "storage_state": "./.auth/shopping_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:7770",
   "geolocation": null,
-  "intent_template": "I want to browse the products in the {{category}} category",
+  "intent_template": "How much I spent on {{category}} shopping during {{time}}",
   "instantiation_dict": {
-    "category": "Cabinets, Racks & Shelves"
+    "category": "cooking and food",
+    "time": "March 2022"
   },
-  "intent": "I want to browse the products in the Cabinets, Racks & Shelves category",
+  "intent": "How much I spent on cooking and food shopping during March 2022",
   "require_reset": false,
   "eval": {
     "eval_types": [
-      "url_match"
+      "string_match"
     ],
-    "reference_answers": null,
-    "reference_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:7770/office-products/office-furniture-lighting/cabinets-racks-shelves.html",
+    "reference_answers": {
+      "must_include": [
+        "52.35"
+      ]
+    },
+    "reference_url": "",
     "program_html": [],
-    "url_note": "GOLD in PRED"
+    "string_note": "",
+    "reference_answer_raw_annotation": "$52.35"
   },
-  "intent_template_id": 211
+  "intent_template_id": 162
 }

@@ -2,17 +2,17 @@
   "sites": [
     "reddit"
   ],
-  "task_id": 719,
+  "task_id": 731,
   "require_login": true,
   "storage_state": "./.auth/reddit_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999",
   "geolocation": null,
-  "intent_template": "Like all submissions created by {{user}} in subreddit {{subreddit}}",
+  "intent_template": "Edit my post on {{post}} by adding a line to the body that says \"{{content}}\"",
   "instantiation_dict": {
-    "subreddit": "wallstreetbets",
-    "user": "ThetaGang_wsb"
+    "post": "Nvidia RTX 4090",
+    "content": "EDIT: This news aged well"
   },
-  "intent": "Like all submissions created by ThetaGang_wsb in subreddit wallstreetbets",
+  "intent": "Edit my post on Nvidia RTX 4090 by adding a line to the body that says \"EDIT: This news aged well\"",
   "require_reset": false,
   "eval": {
     "eval_types": [
@@ -22,24 +22,16 @@
     "reference_url": "",
     "program_html": [
       {
-        "url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/wallstreetbets/29478/how-will-airbnb-close-following-their-earnings-report-on",
-        "locator": "document.querySelector('div.submission__vote').querySelector('form').getAttribute('class')",
+        "url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/f/MachineLearning/1/nvidia-rtx-4090",
+        "locator": "document.querySelector('.submission__body').outerText",
         "required_contents": {
           "must_include": [
-            "vote vote--user-upvoted"
-          ]
-        }
-      },
-      {
-        "url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/wallstreetbets/29458/how-much-will-the-federal-reserve-raise-interest-rates-in",
-        "locator": "document.querySelector('div.submission__vote').querySelector('form').getAttribute('class')",
-        "required_contents": {
-          "must_include": [
-            "vote vote--user-upvoted"
+            "EDIT: This news aged well",
+            "Crazy device for ML!"
           ]
         }
       }
     ]
   },
-  "intent_template_id": 25
+  "intent_template_id": 27
 }

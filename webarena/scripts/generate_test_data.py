@@ -8,7 +8,7 @@ from browser_env.env_config import *
 
 
 def main() -> None:
-    DATASET = os.environ["DATASET"]
+    DATASET = "webarena"
     if DATASET == "webarena":
         print("DATASET: webarena")
         print(f"REDDIT: {REDDIT}")

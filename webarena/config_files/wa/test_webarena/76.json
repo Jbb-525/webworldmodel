@@ -2,17 +2,17 @@
   "sites": [
     "reddit"
   ],
-  "task_id": 618,
+  "task_id": 608,
   "require_login": true,
   "storage_state": "./.auth/reddit_state.json",
-  "start_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/pics",
+  "start_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999",
   "geolocation": null,
-  "intent_template": "Re-post the image of {{content}} in this page to {{subreddit}} subreddit and note \"from /f/pics\"",
+  "intent_template": "Find a subreddit focused on topics related to {{topic}}, and post my question, \"{{question}}\" there",
   "instantiation_dict": {
-    "content": "Wife's costume",
-    "subreddit": "funny"
+    "topic": "city lives in DMV area",
+    "question": "safe and budge apartment to live"
   },
-  "intent": "Re-post the image of Wife's costume in this page to funny subreddit and note \"from /f/pics\"",
+  "intent": "Find a subreddit focused on topics related to city lives in DMV area, and post my question, \"safe and budge apartment to live\" there",
   "require_reset": false,
   "eval": {
     "eval_types": [
@@ -20,28 +20,19 @@
       "program_html"
     ],
     "reference_answers": null,
-    "reference_url": "http://ec2-3-17-143-106.us-east-2.compute.amazonaws.com:9999/f/funny",
+    "reference_url": "http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/f/washington |OR| http://ec2-3-15-200-6.us-east-2.compute.amazonaws.com:9999/f/washingtondc",
     "program_html": [
       {
         "url": "func:reddit_get_post_url('__last_url__')",
         "locator": "document.querySelector('.submission__inner').outerText",
         "required_contents": {
           "must_include": [
-            "from /f/pics"
-          ]
-        }
-      },
-      {
-        "url": "func:reddit_get_post_url('__last_url__')",
-        "locator": "[...document.querySelector('.submission__inner').querySelectorAll('[href],[src]')].map(elem => elem.getAttribute('href') || elem.getAttribute('src')).join(' ')",
-        "required_contents": {
-          "must_include": [
-            "6bfbf1280d28d84a9261695f0cac5a90addaaff1174807a2b381fdc159f3ed00.jpg"
+            "safe and budge apartment to live"
           ]
         }
       }
     ],
     "url_note": "GOLD in PRED"
   },
-  "intent_template_id": 11
+  "intent_template_id": 5
 }
